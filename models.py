@@ -16,11 +16,14 @@ class HabitModel(Base):
     __tablename__ = "habits"
 
     id = Column(Integer, primary_key=True, index=True)
+    # --- NEW COLUMN ---
+    user_id = Column(String, index=True) # Stores "UserA", "UserB", or a UUID
+    # ------------------
     name = Column(String, index=True)
     emoji = Column(String)
     colorValue = Column(Integer)
     frequencyIndex = Column(Integer)
-    startDate = Column(String) # Stored as ISO string
+    startDate = Column(String)
     description = Column(String, nullable=True)
     goal = Column(Integer, nullable=True)
     reminderHour = Column(Integer, nullable=True)
